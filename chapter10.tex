@@ -1,0 +1,178 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+
+% Confidence intervals (p)
+
+\subsection{Confidence Intervals}
+\subsubsection{Two Sample Confidence Interval with Proportions}
+\textbf{State}
+\begin{itemize}
+    \item I will construct a two-sample z interval for $p_1 - p_2$ where $p_1$ is… and $p_2$ is ...
+\end{itemize}
+\textbf{Plan}
+\begin{itemize}
+    \item Independent random samples or 2 groups in a randomized experiment
+    \item 10\%: $n_1 \leq 0.1N_1$ \textbf{and} $n_2 \leq 0.1N_2$
+    \item Large counts: $n_1\hat{p}_1 \geq 10$, $n_1(1-\hat{p}_1) \geq 10$ \textbf{and} $n_2\hat{p}_2 \geq 10$, $n_2(1-\hat{p}_2) \geq 10$
+\end{itemize}
+\textbf{Do} \textit{(2-PropZInt)}
+
+\[\hat{p}_1-\hat{p}_2 \pm z* \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}\]
+
+\noindent\textbf{Conclude}
+I am C\% confident that the interval from ... captures the true difference in population proportions of ... and ...
+\\~\\
+\noindent\textbf{Using interval:} Since 0 was (not) captured in the C\% confidence interval ... for the difference between ... and ..., we have/do not have convincing evidence that ..., at an $\alpha = 1 - C\%$ level.
+\\~\\
+\noindent\hyperlink{toc}{Back!}
+\newline\hrule
+
+% Confidence intervals (means)
+
+\subsubsection{Two Sample Confidence Interval with Means}
+\textbf{State}
+\begin{itemize}
+    \item I will construct a two-sample t interval for $\mu_1 - \mu_2$ where $\mu_1$ is ... and $\mu_2$ is ...
+\end{itemize}
+\textbf{Plan}
+\begin{itemize}
+    \item Independent random samples or 2 groups in a randomized experiment
+    \item 10\%: $n_1 \leq 0.1N_1$ \textbf{and} $n_2 \leq 0.1N_2$
+    \item Normality/CLT: $n_1 \geq 30$ \textbf{and} $n_2 \geq 30$ or \textbf{both} plots shows no \textit{strong} skew or \textit{obvious} outliers.
+\end{itemize}
+\textbf{Do} \textit{(2-SampTInt)}
+
+\[\bar{x}_1 - \bar{x}_2 \pm t* \sqrt{\frac{(S_{x1})^2}{n_1} + \frac{(S_{x2})^2}{n_2}},\;\;df = n_1 - 1 \;or\; n_2 - 1 \;(whichever\:is\:smaller)\]
+
+\noindent\textbf{Conclude}
+I am C\% confident that the interval from ... captures the true difference in population means of ... and ...
+\\~\\
+\noindent\textbf{Using interval:} Since 0 was (not) captured in the C\% confidence interval ... for the difference between ... and ..., we can conclude that there is (no) significant difference between ... and ..., at an $\alpha = 1 - C\%$ level.
+\\~\\
+\noindent\hyperlink{toc}{Back!}
+\newline\hrule
+
+\subsubsection{One Sample Confidence Interval with Paired Means}
+\textbf{State}
+\begin{itemize}
+    \item I will construct a one-sample t interval for $\mu_d$ where $\mu_d$ is the mean difference between ... and ...
+\end{itemize}
+\textbf{Plan}
+\begin{itemize}
+    \item Random: paired data come from a random sample from the population of interest or from a randomized experiment.
+    \item 10\%: $n_d \leq 0.1N_d$
+    \item Normality: $n_d \geq 30$ or plot shows no \textit{strong} skew or \textit{obvious} outliers.
+\end{itemize}
+\textbf{Do} \textit{(TInterval)}
+
+\[\bar{x}_d \pm t* \frac{S_{x_d}}{\sqrt{n_d}},\;\;df = n_d - 1\]
+
+\noindent\textbf{Conclude}
+I am C\% confident that the interval from ... captures the true population mean difference of ...
+\\~\\
+\noindent\textbf{Using interval:} \textit{Unsure, use one of above scripts.}
+\\~\\
+\noindent\hyperlink{toc}{Back!}
+\newline\hrule
+
+% Significance tests
+
+\subsection{Significance Tests}
+
+% Proportions
+
+\subsubsection{Two Sample Significance Test with Proportions}
+\textbf{State}
+\begin{itemize}
+    \item I will conduct a two-sample z test for $p_1 - p_2$ where $p_1$ is ... and $p_2$ is ...
+    \[H_0 : p_1 = p_2\]
+    \[H_a : p_1 <,\:>,\:\neq\ p_2\]
+\end{itemize}
+\textbf{Plan}
+\begin{itemize}
+    \item Independent random samples or 2 groups in a randomized experiment
+    \item 10\%: $n_1 \leq 0.1N_1$ \textbf{and} $n_2 \leq 0.1N_2$
+    \item Large counts: $n_1\hat{p}_1 \geq 10$, $n_1(1-\hat{p}_1) \geq 10$ \textbf{and} $n_2\hat{p}_2 \geq 10$, $n_2(1-\hat{p}_2) \geq 10$
+\end{itemize}
+\textbf{Do} \textit{(2-PropZTest)}
+
+\[z = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\frac{\hat{p}_c(1 - \hat{p}_c)}{n_1} + \frac{\hat{p}_c(1 - \hat{p}_c)}{n_2}}},\;where\; \hat{p}_c = \frac{x_1 + x_2}{n_1 + n_2}\]
+One-sided: \[p = normalcdf(..., \mu: 0, \sigma: 1)\]
+Two-sided: \[p = normalcdf(lower: -z, upper: z, \mu: 0, \sigma: 1)\]
+
+\noindent\textbf{Conclude}
+
+If $p \leq \alpha$, reject $H_0$. If $p > \alpha$, fail to reject $H_0$.
+\textit{Assume $\alpha = 0.05$ unless otherwise stated.}
+\\~\\
+As our P-value of ... is less than or greater than $\alpha$ = ..., we fail to reject or reject $H_0$ (in favour of $H_a$). 
+We have or do not have convincing evidence that ...
+\\~\\
+\hyperlink{toc}{Back!}
+\newline\hrule
+
+% Means 
+
+\subsubsection{Two Sample Significance Test with Means}
+\textbf{State}
+\begin{itemize}
+    \item I will conduct a two-sample t-test for $\mu_1 - \mu_2$ where $\mu_1$ is ... and $\mu_2$ is ...
+    \[H_0 : \mu_1 = \mu_2\]
+    \[H_a : \mu_1 <,\:>,\:\neq\ \mu_2\]
+\end{itemize}
+\textbf{Plan}
+\begin{itemize}
+    \item Independent random samples or 2 groups in a randomized experiment
+    \item 10\%: $n_1 \leq 0.1N_1$ \textbf{and} $n_2 \leq 0.1N_2$
+    \item Normality/CLT: $n_1 \geq 30$ \textbf{and} $n_2 \geq 30$ or \textbf{both} plots shows no \textit{strong} skew or \textit{obvious} outliers.
+\end{itemize}
+\textbf{Do} \textit{(2-SampTTest)}
+
+\[t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{(S_{x1})^2}{n_1} + \frac{(S_{x2})^2}{n_2}}},\;\;df = n_1 - 1 \;or\; n_2 - 1 \;(whichever\:is\:smaller)\]
+\[p = normalcdf(..., \mu: 0, \sigma: 1)\]
+
+\noindent\textbf{Conclude}
+
+If $p \leq \alpha$, reject $H_0$. If $p > \alpha$, fail to reject $H_0$.
+\textit{Assume $\alpha = 0.05$ unless otherwise stated.}
+\\~\\
+As our P-value of ... is less than or greater than $\alpha$ = ..., we fail to reject or reject $H_0$ (in favour of $H_a$). 
+We have or do not have convincing evidence that ...
+\\~\\
+\noindent\textbf{2-sample \textit{t} is never pooled}
+\\~\\
+\hyperlink{toc}{Back!}
+\newline\hrule
+
+\subsubsection{One Sample Significance Test with Paired Means}
+\textbf{State}
+\begin{itemize}
+    \item I will conduct a one-sample t-test for $\mu_d$ where $\mu_d$ is the mean difference between ... and ...
+    \[H_0 : \mu_d = 0\]
+    \[H_a : \mu_d <,\:>,\:\neq\ 0\]
+\end{itemize}
+\textbf{Plan}
+\begin{itemize}
+    \item Random: Paired data come from a random sample from the population of interest or from a randomized experiment.
+    \item 10\%: $n_d \leq 0.1N_d$
+    \item Normality/CLT: $n_d \geq 30$ or plot shows no \textit{strong} skew or \textit{obvious} outliers.
+\end{itemize}
+\textbf{Do} \textit{(T-Test)}
+
+\[t = \frac{\bar{x}_d}{\nicefrac{S_{x_d}}{\sqrt{n_d}}},\;\;df = n_d - 1\]
+One-sided: \[p = 0.5 - tcdf(..., df: n - 1)\]
+Two-sided: \[p = 1 - tcdf(lower: -t, upper: t, df: n - 1)\]
+
+\noindent\textbf{Conclude}
+
+If $p \leq \alpha$, reject $H_0$. If $p > \alpha$, fail to reject $H_0$.
+\textit{Assume $\alpha = 0.05$ unless otherwise stated.}
+\\~\\
+As our P-value of ... is less than or greater than $\alpha$ = ..., we fail to reject or reject $H_0$ (in favour of $H_a$). 
+We have or do not have convincing evidence that ...
+\\~\\
+\noindent\hyperlink{toc}{Back!}
+\newline\hrule
+
+\end{document}

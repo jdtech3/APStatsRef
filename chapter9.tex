@@ -1,0 +1,86 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+
+% Hypotheses
+
+\subsection{Types of Error}
+\makebox[\textwidth]{
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+& \multicolumn{3}{c|}{\textit{\textbf{Truth (population)}}}                                                                                                                                                             \\ \hline
+\multirow{3}{*}{\textit{\textbf{\begin{tabular}[c]{@{}c@{}}Conclusion\\ (sample)\end{tabular}}}} &                            & \textbf{$H_0$ True}                                                                                  & \textbf{$H_a$ True}                                                                     \\ \cline{2-4} 
+& \textbf{Reject $H_0$}         & \begin{tabular}[c]{@{}c@{}}Type I error\\ $P(\textrm{Type I Error})=\alpha$\end{tabular}                          & \begin{tabular}[c]{@{}c@{}}Power\\ $P(\textrm{Correct Conclusion}\:|\:\textrm{$H_a$ is True})=1-\beta$\end{tabular} \\ \cline{2-4} 
+& \textbf{Fail to reject $H_0$} & \begin{tabular}[c]{@{}c@{}}Correct Conclusion\\ $P(\textrm{Correct Conclusion$\:|\:H_0$ is True})=1-\alpha$\end{tabular} & \begin{tabular}[c]{@{}c@{}}Type II Error\\ $P(\textrm{Type II Error})=\beta$\end{tabular}           \\ \hline
+\end{tabular}
+
+}
+
+% Proportions
+
+\subsection{One Sample Significance Test with Proportions}
+\textbf{State}
+\begin{itemize}
+    \item I will conduct a one-sample z test for $p$ where $p = ...$
+    \[H_0 : p = p_0\]
+    \[H_a : p <,\:>,\:\neq\ p_0\]
+\end{itemize}
+\textbf{Plan}
+\begin{itemize}
+    \item Random samples
+    \item 10\%: $n \leq 0.1N$
+    \item Large counts: $n\hat{p} \geq 10$ and $n(1-\hat{p}) \geq 10$
+\end{itemize}
+\textbf{Do} \textit{(1-PropZTest)}
+
+\[z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}\]
+One-sided: \[p = normalcdf(..., \mu: 0, \sigma: 1)\]
+Two-sided: \[p = normalcdf(lower: -z, upper: z, \mu: 0, \sigma: 1)\]
+
+\noindent\textbf{Conclude}
+
+If $p \leq \alpha$, reject $H_0$. If $p > \alpha$, fail to reject $H_0$.
+\textit{Assume $\alpha = 0.05$ unless otherwise stated.}
+
+As our P-value of ... is less than or greater than $\alpha$ = ..., we fail to reject or reject $H_0$ (in favour of $H_a$). 
+
+We have or do not have convincing evidence that ...
+\\~\\
+\noindent\hyperlink{toc}{Back!}
+\newline\hrule
+
+% Means
+
+\subsection{One Sample Significance Test with Means}
+\textbf{State}
+\begin{itemize}
+    \item I will conduct a one-sample t-test for $\mu$ where $\mu = ...$
+    \[H_0 : \mu = \mu_0\]
+    \[H_a : \mu <,\:>,\:\neq\ \mu_0\]
+\end{itemize}
+\textbf{Plan}
+\begin{itemize}
+    \item Random samples
+    \item 10\%: $n \leq 0.1N$
+    \item Normality/CLT: $n \geq 30$ or plot shows no \textit{strong} skew or \textit{obvious} outliers.
+\end{itemize}
+\textbf{Do} \textit{(T-Test)}
+
+\[t = \frac{\bar{x} - \mu_0}{\frac{S_x}{\sqrt{n}}},\;\;df = n - 1\]
+One-sided: \[p = 0.5 - tcdf(..., df: n - 1)\]
+Two-sided: \[p = 1 - tcdf(lower: -t, upper: t, df: n - 1)\]
+
+\noindent\textbf{Conclude}
+
+If $p \leq \alpha$, reject $H_0$. If $p > \alpha$, fail to reject $H_0$.
+\textit{Assume $\alpha = 0.05$ unless otherwise stated.}
+
+As our P-value of ... is less than or greater than $\alpha$ = ..., we fail to reject or reject $H_0$ (in favour of $H_a$). 
+
+We have or do not have convincing evidence that ...
+\\~\\
+\noindent\hyperlink{toc}{Back!}
+\newline\hrule
+
+\end{document}

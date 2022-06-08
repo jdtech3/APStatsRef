@@ -1,0 +1,74 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+
+\subsection{General}
+\begin{itemize}
+    \item Hypotheses
+    \subitem $H_0$: null hypothesis
+    \subitem $H_a$: alternative hypothesis
+    \subitem $\alpha$: significance level ($1 -$ C-level)
+    \subitem P-value: probability of $H_a$ or more extreme occurring given that $H_0$ is true
+    \item $z$ is z-score
+    \item $t$ is t-score
+    \item $z*$ is the critical value for the standard Normal curve $N(\mu:0, \sigma:1)$ with C\% of its area between $-z*$ and $z*$
+    \item $n$ is sample size
+    \item $N$ is population size
+    \item \textbf{\scshape{SE}} is the standard error
+    \item \textbf{\scshape{ME}} is margin of error: $\textrm{(critical value)} \cdot \textbf{\scshape{SE}}$
+\end{itemize}
+
+\noindent\hyperlink{toc}{Back!}
+\newline\hrule
+
+\subsection{Proportions}
+
+\begin{tabular}{ | p{2.6cm} || p{2.6cm} | p{2.6cm} | p{2.6cm} | }
+    \hline
+    Type & Distr. of sample data (statistic) & Population distr. (parameter) & Sampling distr. \\
+    \hline
+    Proportion & $\hat{p}$ & $p$ &  \\
+    \hline
+    Mean proportion &  &  & $\mu_{\hat{p}}$ \\
+    \hline
+    Std. deviation & $S_{\hat{p}}$ & $\sigma$ & $\sigma_{\hat{p}}$ \\
+    \hline
+\end{tabular}
+\\~\\\\~\\
+\noindent\hyperlink{toc}{Back!}
+\newline\hrule
+
+\subsection{Means}
+
+\begin{tabular}{ | p{2.6cm} || p{2.6cm} | p{2.6cm} | p{2.6cm} | }
+    \hline
+    Type & Distr. of sample data (statistic) & Population distr. (parameter) & Sampling distr. \\
+    \hline
+    Mean & $\bar{x}$ & $\mu$ & $\mu_{\bar{x}}$ \\
+    \hline
+    Std. deviation & $S_x$ & $\sigma$ & $\sigma_{\bar{x}}$ \\
+    \hline
+\end{tabular}
+\\~\\\\~\\
+\noindent\hyperlink{toc}{Back!}
+\newline\hrule
+
+\subsection{Conditions}
+\subsubsection{Always}
+\begin{itemize}
+    \item \textbf{Random} sampling (study) or assignment (experiment): significantly reduces bias, most important thing
+    \item \textbf{10\% condition}: if sampling without replacement (technically not independent), it can be assumed that it is independent if sampling less than 10\% of population
+\end{itemize}
+\subsubsection{Proportions}
+\begin{itemize}
+    \item \textbf{Large counts:} the sampling distribution for $\hat{p}$ becomes approximately Normal
+\end{itemize}
+\subsubsection{Means}
+\begin{itemize}
+    \item \textbf{Central limit theorem (CLT):} the sampling distribution for $\bar{x}$ becomes approximately Normal if sample size is sufficiently large, no matter the shape of the population distribution
+\end{itemize}
+
+\noindent\hyperlink{toc}{Back!}
+\newline\hrule
+
+\end{document}

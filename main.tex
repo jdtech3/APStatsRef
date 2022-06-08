@@ -1,0 +1,67 @@
+\documentclass[fleqn,titlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.54cm]{geometry}
+\usepackage{subfiles}
+\usepackage{multirow}
+\usepackage{bold-extra}
+\usepackage{graphicx}
+\usepackage{units}
+
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}  % new page every section
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=blue
+}
+
+% Optional: dark mode
+% \usepackage{xcolor}
+% \color{white}
+% \pagecolor{black}
+% \hypersetup{linkcolor=yellow}
+
+\usepackage{fancyhdr}
+\lhead{}
+\chead{AP Statistics Quick Reference}
+\rhead{}
+\lfoot{\textsubscript{v4.2}}
+\rfoot{\textsubscript{$ \copyright $  2020 Joe Dai.}}
+
+\title{AP Statistics Quick Reference}
+\author{\textbf{Compiled by:} Joe Dai \\ \\ \textbf{Based on notes by:} Mr. Gibson \\ \textit{\textbf{With help from:} Ryan Tan, Billy Qian, Richard Zhou} \\ \\ \href{https://github.com/jdtech3/apstats}{\LaTeX{} source}}
+\date{May 2020}
+
+\begin{document}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+
+\maketitle
+
+\hypertarget{toc}
+\tableofcontents
+\newpage
+
+\subfile{chapter1-7}
+
+\newpage
+
+\section{Chapter 8}
+\subfile{chapter8}
+
+\newpage
+
+\section{Chapter 9}
+\subfile{chapter9}
+
+\newpage
+
+\section{Chapter 10}
+\subfile{chapter10}
+
+\section{[Symbols] Ch. 8 - 10 --- Confidence Intervals and Significance Tests}
+\subfile{symbols}
+
+\end{document}

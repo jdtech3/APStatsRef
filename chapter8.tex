@@ -1,0 +1,59 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+
+% Proportions
+
+\subsection{One Sample Confidence Interval with Proportions}
+\textbf{State}
+\begin{itemize}
+    \item I will construct a one-sample z interval for $p$ where $p = ...$
+\end{itemize}
+\textbf{Plan}
+\begin{itemize}
+    \item Random samples
+    \item 10\%: $n \leq 0.1N$
+    \item Large counts: $n\hat{p} \geq 10$ and $n(1-\hat{p}) \geq 10$
+\end{itemize}
+\textbf{Do} \textit{(1-PropZInt)}
+
+\[\hat{p} \pm z* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]
+
+\noindent\textbf{Conclude}
+I am C\% confident that the interval from ... captures the true population proportion of ...
+\\~\\
+\noindent\textbf{Using interval:} Since ... was/was not captured in the (C\%) confidence interval ... (for ...), it is/is not plausible that ... Therefore, the confidence interval provides/does not provide convincing evidence that ...
+\\~\\
+\noindent\textbf{Sample size needed:} $n \geq (\frac{z*}{{ME}})^2 \times \hat{p}(1-\hat{p})$
+\\~\\
+\noindent\hyperlink{toc}{Back!}
+\newline\hrule
+
+% Means
+
+\subsection{One Sample Confidence Interval with Means}
+\textbf{State}
+\begin{itemize}
+    \item I will construct a one-sample t interval for $\mu$ where $\mu = ...$
+\end{itemize}
+\textbf{Plan}
+\begin{itemize}
+    \item Random samples
+    \item 10\%: $n \leq 0.1N$
+    \item Normality/CLT: $n \geq 30$ or plot shows no \textit{strong} skew or \textit{obvious} outliers.
+\end{itemize}
+\textbf{Do} \textit{(TInterval)}
+
+\[\bar{x} \pm t* \frac{S_x}{\sqrt{n}},\;\;df = n - 1\]
+
+\noindent\textbf{Conclude}
+I am C\% confident that the interval from ... captures the true population mean of ...
+\\~\\
+\noindent\textbf{Using interval:} Since ... was/was not captured in the (C\%) confidence interval ... (for ...), it is/is not plausible that ... Therefore, the confidence interval provides/does not provide convincing evidence that ...
+\\~\\
+\noindent\textbf{Sample size needed:} $n \geq (\frac{z*\sigma}{ME})^2$
+\\~\\
+\noindent\hyperlink{toc}{Back!}
+\newline\hrule
+
+\end{document}
